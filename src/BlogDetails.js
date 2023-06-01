@@ -1,4 +1,4 @@
-import moment from "moment/moment";
+// import moment from "moment";
 import { useHistory, useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 
@@ -19,15 +19,18 @@ const BlogDetails = () => {
     });
   };
 
-  const formatDate = (dateString) => {
-    const formattedDate = moment(dateString).format("LLL"); // Use the "LLL" format for date and time
+  // const formatDateTime = (dateTimeString) => {
+  //   const formattedDateTime = moment(dateTimeString).format(
+  //     "YYYY-MM-DD HH:mm:ss"
+  //   );
+  //   // Use the desired date and time format, e.g., "YYYY-MM-DD HH:mm:ss"
 
-    if (formattedDate === "Invalid date") {
-      return "Invalid Date";
-    } else {
-      return formattedDate;
-    }
-  };
+  //   if (formattedDateTime === "Invalid date") {
+  //     return "Invalid Date";
+  //   } else {
+  //     return formattedDateTime;
+  //   }
+  // };
 
   return (
     <div className="blog-details">
@@ -37,7 +40,7 @@ const BlogDetails = () => {
         <article>
           <h2>{blog.title}</h2>
           <p>Written by {blog.author}</p>
-          <p>Date and Time: {formatDate(blog.createdAt)}</p>
+          {/* <p>Time: {formatDateTime(blog.createdAt)}</p> */}
           <div>{blog.body}</div>
           <button onClick={handleClick}>Delete</button>
         </article>
